@@ -1,7 +1,9 @@
+## docker_habr_test
 Try docker https://habr.com/ru/articles/963180/
 
-1 Переходим в директорию приложения
-cd docker_habr_test
+1. Переходим в директорию приложения
+
+'''cd docker_habr_test'''
 
 2 Собираем образ с помощью docker build
 docker build -t my-python-app .
