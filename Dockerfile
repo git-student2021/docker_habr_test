@@ -14,5 +14,11 @@ COPY . .
 # 5. "Сообщаем" Docker, что наше приложение будет работать на порту 5000
 EXPOSE 5000
 
+# Создаем пользователя appuser
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+
+# Переключаемся на этого пользователя
+USER appuser
+
 # 6. Указываем команду, которая запустится при старте контейнера
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
