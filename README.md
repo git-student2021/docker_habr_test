@@ -3,37 +3,48 @@ Try docker https://habr.com/ru/articles/963180/
 
 1. Переходим в директорию приложения
 
-'''cd docker_habr_test'''
+```cd docker_habr_test```
 
-2 Собираем образ с помощью docker build
-docker build -t my-python-app .
+2. Собираем образ с помощью docker build
 
-3 Чтобы убедиться, что образ действительно создался, можно выполнить команду
-docker images
+```docker build -t my-python-app .```
 
-4 Запускаем контейнер из образа с помощью docker run
-docker run -d -p 8080:5000 --name my-running-app my-python-app
+3. Чтобы убедиться, что образ действительно создался, можно выполнить команду
 
-5 Посмотреть, что запущено
-docker ps
+```docker images```
 
-6 Если хотите увидеть вообще все контейнеры, включая те, что были остановлены, добавьте флаг -a
-docker ps -a
+4. Запускаем контейнер из образа с помощью docker run
 
-7 Заглянуть внутрь
-docker logs my-running-app
+```docker run -d -p 8080:5000 --name my-running-app my-python-app```
 
-8 Проверяем результат
-[Кликаем сюда](http://localhost:8080) - Откроется в браузере.
+5. Посмотреть, что запущено
 
-9 Остановить контейнер
-docker stop my-running-app
+```docker ps```
 
-10 Запуск остановленного контейнера
-docker  start my-running-app
+6. Если хотите увидеть вообще все контейнеры, включая те, что были остановлены, добавьте флаг -a
 
-11 Остановить контейнер
-docker stop my-running-app
+```docker ps -a```
 
-12 Удалить контейнер
-docker rm my-running-app
+7. Заглянуть внутрь
+
+```docker logs my-running-app```
+
+8. Проверяем результат
+
+[Кликаем сюда](http://127.0.0.1:8080/qq "http://127.0.0.1:8080/qq") - Откроется в браузере.
+
+9. Остановить контейнер
+
+```docker stop my-running-app```
+
+10. Запуск остановленного контейнера
+
+```docker  start my-running-app```
+
+11. Остановить контейнер
+
+```docker stop my-running-app```
+
+12. Удалить контейнер
+
+```docker rm my-running-app```
