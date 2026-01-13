@@ -1,3 +1,4 @@
+import requests
 from flask import Flask
 
 # Создаем экземпляр приложения Flask
@@ -7,7 +8,9 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     # Эта строка — то, что мы увидим в браузере
-    return 'Docker - это мощь! Мой первый контейнер работает.'
+    result = requests.get('https://catfact.ninja/fact').json()['fact']
+    # result = 'Docker - это мощь! Мой первый контейнер работает.'
+    return result
 
 # Эта часть нужна, чтобы запустить сервер, когда мы запускаем файл напрямую
 if __name__ == '__main__':
